@@ -2,12 +2,25 @@
 package laundrytimesheet;
 
 import java.util.Scanner;
+import java.io.File;
 
+@SuppressWarnings({ "unused", "resource" })
 public class LaundryTimeSheet {
+	
 	public static void main(String[] args) {
+		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter your name");
-		String name = input.next();
+
+		Status login = new Status();
+		
+		if(login.checkStatus()==true) {
+			System.out.println("Welcome Back "  );
+		}
+		else {
+			System.out.println("Enter your name");
+			String username = input.next();
+			System.out.println();	
+		}
 
 	}
 
