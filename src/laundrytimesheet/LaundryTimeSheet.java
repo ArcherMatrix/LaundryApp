@@ -1,4 +1,6 @@
+//  this main class will control the logic flow of the app
 package laundrytimesheet;
+
 import java.util.Scanner;
 import java.io.File;
 
@@ -8,6 +10,7 @@ public class LaundryTimeSheet {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
+
 		Status login = new Status();
 		
 		if(login.checkStatus()==true) {
@@ -16,12 +19,9 @@ public class LaundryTimeSheet {
 		else {
 			System.out.println("Enter your name");
 			String username = input.next();
-			System.out.println();
-			
+			System.out.println();	
 		}
-		
-		
-		
+
 	}
 
 }
