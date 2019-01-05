@@ -14,12 +14,11 @@ public class LaundryTimeSheet {
 		Status login = new Status();
 		
 		if(login.checkStatus()==true) {
-			System.out.println("Welcome Back "  );
+			System.out.println("Welcome Back");
 		}
 		else {
 			System.out.println("Enter your name");
-			String username = input.next();
-			System.out.println();	
+			String username = input.next();	
 		}
 
 	}
