@@ -83,7 +83,7 @@ public class Window extends JPanel {
 //				return new ImageIcon(getClass().getResource(fileName)).getImage();
 //			}
 //		};
-		return SignUpPanel();
+		return new SignUpPanel();
 	}
 	private Icon createIcon(String fileName) {
 		Image image = new ImageIcon(getClass().getResource(fileName)).getImage();
