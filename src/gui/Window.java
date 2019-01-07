@@ -41,9 +41,9 @@ public class Window extends JPanel {
 	Window() {
 		super(new GridLayout(1,1));
 		//Create the 2 Panes (Sign In, Sign UP)
-		JComponent signInPanel = makePanel();
+		JPanel signInPanel = makeSignInPanel();
 		signInPanel.setPreferredSize(new Dimension(782,512));
-		JComponent signUpPanel = makePanel();
+		JPanel signUpPanel = makeSignUpPanel();
 		signUpPanel.setPreferredSize(new Dimension(782,512));
 		//attach panes to the JTabPane
 		JTabbedPane tabbedPane = new JTabbedPane();
@@ -59,18 +59,31 @@ public class Window extends JPanel {
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 	}
 	// 782 x 512
-	private JComponent makePanel() {
-		JPanel panel = new JPanel() {
-			@Override
-			public void paintComponent(Graphics g) {
-				Graphics2D g2 = (Graphics2D)g;
-				g2.drawImage(createImage("/resources/Log_In.jpg"),0,0,null);
-			}
-			public Image createImage(String fileName) {
-				return new ImageIcon(getClass().getResource(fileName)).getImage();
-			}
-		};
-		return panel;
+	private JPanel makeSignInPanel() {
+//		JPanel panel = new JPanel() {
+//			@Override
+//			public void paintComponent(Graphics g) {
+//				Graphics2D g2 = (Graphics2D)g;
+//				g2.drawImage(createImage("/resources/Log_In.jpg"),0,0,null);
+//			}
+//			public Image createImage(String fileName) {
+//				return new ImageIcon(getClass().getResource(fileName)).getImage();
+//			}
+//		};
+		return new SignInPanel();
+	}
+	private JPanel makeSignUpPanel() {
+//		JPanel panel = new JPanel() {
+//			@Override
+//			public void paintComponent(Graphics g) {
+//				Graphics2D g2 = (Graphics2D)g;
+//				g2.drawImage(createImage("/resources/Log_In.jpg"),0,0,null);
+//			}
+//			public Image createImage(String fileName) {
+//				return new ImageIcon(getClass().getResource(fileName)).getImage();
+//			}
+//		};
+		return SignUpPanel();
 	}
 	private Icon createIcon(String fileName) {
 		Image image = new ImageIcon(getClass().getResource(fileName)).getImage();
