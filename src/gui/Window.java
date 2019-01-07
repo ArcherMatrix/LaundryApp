@@ -39,54 +39,37 @@ public class Window extends JPanel {
 		frame.setVisible(true);
 	}
 	Window() {
-		super(new GridLayout(1,1));
+		// making it take all the space in the window
+		super(new GridLayout(1,1)); 
+		
 		//Create the 2 Panes (Sign In, Sign UP)
 		JPanel signInPanel = makeSignInPanel();
-		signInPanel.setPreferredSize(new Dimension(782,512));
+		signInPanel.setPreferredSize(new Dimension(1000,800));
 		JPanel signUpPanel = makeSignUpPanel();
-		signUpPanel.setPreferredSize(new Dimension(782,512));
-		//attach panes to the JTabPane
+		signUpPanel.setPreferredSize(new Dimension(1000,800));
+		
+		//attach two tabs to the JTabPane
 		JTabbedPane tabbedPane = new JTabbedPane();
-		Icon signInIcon = createIcon("/resources/Sign_In_Image.png");
+		Icon signInIcon = createIcon("/resources/Sign_In_Icon.png");
 		tabbedPane.addTab("Sign In", signInIcon,signInPanel);
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
-		Icon signUpIcon = createIcon("/resources/Sign_Up_Image.png");
+		Icon signUpIcon = createIcon("/resources/Sign_Up_Icon.png");
 		tabbedPane.addTab("Sign Up", signUpIcon, signUpPanel);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
-		//attaching JTabPane to this WindowPane
+		
+		//attaching JTabPane to this Window Pane		
 		add(tabbedPane);
 		//enables scrolling tabs
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 	}
-	// 782 x 512
 	private JPanel makeSignInPanel() {
-//		JPanel panel = new JPanel() {
-//			@Override
-//			public void paintComponent(Graphics g) {
-//				Graphics2D g2 = (Graphics2D)g;
-//				g2.drawImage(createImage("/resources/Log_In.jpg"),0,0,null);
-//			}
-//			public Image createImage(String fileName) {
-//				return new ImageIcon(getClass().getResource(fileName)).getImage();
-//			}
-//		};
 		return new SignInPanel();
 	}
 	private JPanel makeSignUpPanel() {
-//		JPanel panel = new JPanel() {
-//			@Override
-//			public void paintComponent(Graphics g) {
-//				Graphics2D g2 = (Graphics2D)g;
-//				g2.drawImage(createImage("/resources/Log_In.jpg"),0,0,null);
-//			}
-//			public Image createImage(String fileName) {
-//				return new ImageIcon(getClass().getResource(fileName)).getImage();
-//			}
-//		};
 		return new SignUpPanel();
 	}
 	private Icon createIcon(String fileName) {
 		Image image = new ImageIcon(getClass().getResource(fileName)).getImage();
-		return new ImageIcon(image.getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+		return new ImageIcon(image.getScaledInstance(25, 25, Image.SCALE_DEFAULT));
 	}
 }    
