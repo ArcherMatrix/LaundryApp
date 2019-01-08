@@ -17,11 +17,11 @@ import javax.swing.JTextField;
 public class SignUpPanel extends JPanel {
 	SignUpPanel() {
 		setLayout(new BorderLayout());
-		JPanel newAccountPanel = createAccount();
+		JPanel newAccountPanel = createAccountPanel();
 		add(newAccountPanel);
 		//add(new JButton("create"));
 	}
-	private JPanel createAccount() {
+	private JPanel createAccountPanel() {
 		// --- > creating labels
 		JLabel nameLabel = new JLabel(" Name:");
 		JLabel emailLabel = new JLabel(" Your current email address:");
