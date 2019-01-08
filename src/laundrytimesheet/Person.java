@@ -5,6 +5,7 @@ public class Person {
 	}
 		private String name;
 		private int phoneNumber;
+		private int password;
 		
 		public void setName(String a) {
 			name=a;

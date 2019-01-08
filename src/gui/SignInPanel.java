@@ -43,6 +43,7 @@ public class SignInPanel extends JPanel {
 		JTextField usernameField = new JTextField();
 		{
 			usernameField.setFont(new Font("Lucida Console",Font.PLAIN,20));
+			
 		}
 		JPasswordField passwordField = new JPasswordField();
 		{
@@ -64,7 +65,7 @@ public class SignInPanel extends JPanel {
 	}
 	@Override
 	public void paintComponent(Graphics g) {
-			g.drawImage(createImage("/resources/Sign_In_Image.jpg"),0,0,null);
+			g.drawImage(createImage("/resources/Sign_In_Image.png"),0,0,null);
 	}
 	private Image createImage(String fileName) {
 		Image image = new ImageIcon(getClass().getResource(fileName)).getImage();
