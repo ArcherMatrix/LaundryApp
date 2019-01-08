@@ -21,4 +21,5 @@ public class DatabaseManager {
 	public boolean add(Person person) {
 		return true;
 	}
+	
 }
