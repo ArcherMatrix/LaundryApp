@@ -3,7 +3,7 @@ package laundrytimesheet;
 public class Person {
 		private String name;
 		private String password;
-		private String username
+		private String username;
 		private int phoneNumber;
 		
 		public String getName() {
@@ -24,7 +24,7 @@ public class Person {
 		public void setPhoneNumber(int phoneNumber) {
 			this.phoneNumber = phoneNumber;
 		}
-		public String setUsername(String username) {
+		public void setUsername(String username) {
 			this.username = username;
 		}
 		public String getUsername(){
