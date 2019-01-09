@@ -17,33 +17,39 @@ public class DatabaseManager {
 	 * @param person object being added to the database
 	 * @return whether was able to create and save the Person on disk
 	 */
+	File file = new File(""); 
 	
 	//Adds a person to the database directory and then writes their info into a their personal file.
 	public void add(Person person) {
-		File file = new File(C:\Users\Sheldon\Documents\Java Projects\LaundryApp\src\database,
+		file = new File("C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
 				person.getName()+".txt");
-		PrintWriter output = new PrintWriter(person_info);
+		PrintWriter output = new PrintWriter(file);
 		output.println("Name: " + person.getname());
 		output.println("PhoneNumber: " + String.valueOf(person.getPhoneNumeber()));
 		output.println("Username " + person.getUsername);
 		output.println("Password: " + person.getPassword());
-		output.close()
+		output.close();
 	}
 	//Checks if the Persons's file exists and can be accessed.
 	public boolean doesUserExist(Person person){
-		if((person.getName()+".txt").exists()) {
+		file = "C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
+				person.getName()+".txt"
+		if((file.getName()).exists()) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
+	//Removes user from file system.
 	public void remove(Person person) {
-		if((person.getName()+".txt").exists()) {
-			person.getName()+".txt".delete();
+		"C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
+		person.getName()+".txt"
+		if(file.exists()) {
+			file.delete();
 		}
 		else {
-			return false;
+			System.out.println("Error: User does not exist");
 		} 
 
 }
