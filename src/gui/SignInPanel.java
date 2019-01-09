@@ -16,7 +16,6 @@ import javax.swing.JTextField;
 public class SignInPanel extends JPanel {
 	SignInPanel() {
 		setLayout(new BorderLayout());
-		
 		JPanel authentificationPanel = createAuthentificationPanel();
 		add(authentificationPanel,BorderLayout.CENTER);
 	}
@@ -43,13 +42,14 @@ public class SignInPanel extends JPanel {
 		JTextField usernameField = new JTextField();
 		{
 			usernameField.setFont(new Font("Lucida Console",Font.PLAIN,20));
-			
 		}
 		JPasswordField passwordField = new JPasswordField();
 		{
 			passwordField.setFont(new Font("Lucida Console",Font.PLAIN,40));
 		}
 		
+		// attaching listener
+		new SignInListener(usernameField, passwordField);
 		//attaching them to authentificationPane
 		authentificationPane.add(usernameLabel);
 		authentificationPane.add(usernameField);
