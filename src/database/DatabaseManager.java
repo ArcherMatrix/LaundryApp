@@ -1,5 +1,6 @@
 package database;
- 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 import laundrytimesheet.Person;
@@ -20,21 +21,19 @@ public class DatabaseManager {
 	File file = new File(""); 
 	
 	//Adds a person to the database directory and then writes their info into a their personal file.
-	public void add(Person person) {
-		file = new File("C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
-				person.getName()+".txt");
+	public void add(Person person) throws FileNotFoundException {
+		file = new File("src/database", person.getName()+".txt");
 		PrintWriter output = new PrintWriter(file);
-		output.println("Name: " + person.getname());
-		output.println("PhoneNumber: " + String.valueOf(person.getPhoneNumeber()));
-		output.println("Username " + person.getUsername);
+		output.println("Name: " + person.getName());
+		output.println("PhoneNumber: " + String.valueOf(person.getMobileNumber()));
+		output.println("Username " + person.getUsername());
 		output.println("Password: " + person.getPassword());
 		output.close();
 	}
 	//Checks if the Persons's file exists and can be accessed.
 	public boolean doesUserExist(Person person){
-		file = "C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
-				person.getName()+".txt"
-		if((file.getName()).exists()) {
+		file = new File("src/database", person.getName()+".txt");
+		if(file.exists()) {
 			return true;
 		}
 		else {
@@ -43,8 +42,7 @@ public class DatabaseManager {
 	}
 	//Removes user from file system.
 	public void remove(Person person) {
-		"C:\\Users\\Sheldon\\Documents\\Java Projects\\LaundryApp\\src\\database",
-		person.getName()+".txt"
+		file = new File("src/database", person.getName()+".txt");
 		if(file.exists()) {
 			file.delete();
 		}

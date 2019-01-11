@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 import laundrytimesheet.Person;
 import laundrytimesheet.Status;
 /**
- * This class will respond to user 
+ * This class is responsible for actions on SignInTab
  * @author LaundryApp
  */
 public class SignInListener {

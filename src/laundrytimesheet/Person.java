@@ -2,32 +2,39 @@ package laundrytimesheet;
 
 public class Person {
 		private String name;
-		private String password;
+		private int mobileNumber;
+		private String emailAddress;
 		private String username;
-		private int phoneNumber;
+		private String password;
 		
-		public String getName() {
-			return name;
-		}
 		public void setName(String name) {
 			this.name = name;
 		}
-		public String getPassword() {
-			return password;
+		public String getName() {
+			return name;
 		}
-		public void setPassword(String password) {
-			this.password = password;
+		public void setMobileNumber(int phoneNumber) {
+			this.mobileNumber = phoneNumber;
 		}
-		public int getPhoneNumber() {
-			return phoneNumber;
+		public int getMobileNumber() {
+			return mobileNumber;
 		}
-		public void setPhoneNumber(int phoneNumber) {
-			this.phoneNumber = phoneNumber;
+		public void setEmailAddress(String emailAddress) {
+			this.emailAddress = emailAddress;
+		}
+		public String getEmailAddress() {
+			return emailAddress;
 		}
 		public void setUsername(String username) {
 			this.username = username;
 		}
 		public String getUsername(){
 			return username;
+		}
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		public String getPassword() {
+			return password;
 		}
 }
