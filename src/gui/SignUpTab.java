@@ -14,8 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class SignUpPanel extends JPanel {
-	SignUpPanel() {
+public class SignUpTab extends JPanel {
+	SignUpTab() {
 		setLayout(new BorderLayout());
 		JPanel newAccountPanel = createAccountPanel();
 		add(newAccountPanel);

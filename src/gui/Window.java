@@ -63,10 +63,10 @@ public class Window extends JPanel {
 		tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 	}
 	private JPanel makeSignInPanel() {
-		return new SignInPanel();
+		return new SignInTab();
 	}
 	private JPanel makeSignUpPanel() {
-		return new SignUpPanel();
+		return new SignUpTab();
 	}
 	private Icon createIcon(String fileName) {
 		Image image = new ImageIcon(getClass().getResource(fileName)).getImage();

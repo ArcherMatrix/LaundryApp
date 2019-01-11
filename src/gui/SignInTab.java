@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class SignInPanel extends JPanel {
-	SignInPanel() {
+public class SignInTab extends JPanel {
+	SignInTab() {
 		setLayout(new BorderLayout());
 		JPanel authentificationPanel = createAuthentificationPanel();
 		add(authentificationPanel,BorderLayout.CENTER);
