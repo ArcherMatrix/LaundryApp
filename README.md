@@ -1,12 +1,13 @@
 # LaundryApp
 So, for now, the plan is the following:
 
-laundrytimesheet --> his package contains classes that will control the logic of the app 
+laundrytimesheet --> This package contains classes that will control the logic of the app.
 
-gui --> this package contains classes that will display  info to user
+listeners(will be added)--> Contains all action listeners for gui (FBI.exe not included).
 
-database --> thiss package will serve as a database where users will be store
-			 as username.txt 
+gui -->  Contains classes that will display the pages to the user.
+
+database --> Stores all of the users's private information in indivdual files.
 
 
-resources --> this package contains the resources (images, music, and clasified information from ALIENS)
+resources --> This contains the images, sounds, (clasified information from ALIENS) and other medai that will be used in the gui.
