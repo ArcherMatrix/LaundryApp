@@ -32,7 +32,7 @@ public class CentralPanel extends JPanel {
         JTabbedPane tabbedPane = new JTabbedPane();
                     tabbedPane.add("Sign In",new SignInTab(this,cardLayout));
                     tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
-                    tabbedPane.add("Sign Up",new SignUpTab());
+                    tabbedPane.add("Sign Up",new SignUpTab(this,cardLayout));
                     tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
         Homepage homepage = new Homepage();
         // attaching cards 
