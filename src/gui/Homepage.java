@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -10,7 +11,12 @@ import javax.swing.JPanel;
  */
 public class Homepage extends JPanel {
     
-    
+    Homepage() {
+        setLayout(null);
+        JButton button = new JButton("HOME");
+                button.setBounds(300, 300, 100, 50);
+        add(button);
+    }
     @Override
     public void paintComponent(Graphics g) {
         g.setColor(Color.RED);
