@@ -14,12 +14,12 @@ public class Homepage extends JPanel {
     Homepage() {
         setLayout(null);
         JButton button = new JButton("HOME");
-                button.setBounds(300, 300, 100, 50);
+                button.setBounds(0, 0, 100, 50);
         add(button);
     }
     @Override
     public void paintComponent(Graphics g) {
-        g.setColor(Color.RED);
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 0, 1000, 800);
     }
 }

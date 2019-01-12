@@ -7,16 +7,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import listeners.SignInListener;
+
 
 /**
  * This class will hold all the components 
  * @author Moises
  */
 public class SignInTab extends JPanel {
-    SignInTab() {
+    JPanel centralPanel;
+    CardLayout cardLayout;
+    SignInTab(JPanel centralPanel, CardLayout cardLayout) {
+        this.centralPanel = centralPanel;
+        this.cardLayout = cardLayout;
         setLayout(null);
         JButton button = new JButton("HOME");
-                button.setBounds(300, 300, 100, 50);
+                button.setBounds(0, 0, 100, 50);
+                button.addActionListener(new SignInListener(centralPanel,cardLayout));
         add(button);
     }
     

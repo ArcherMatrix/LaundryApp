@@ -30,7 +30,7 @@ public class CentralPanel extends JPanel {
     private void createComponents() {
         // creating cards
         JTabbedPane tabbedPane = new JTabbedPane();
-                    tabbedPane.add("Sign In",new SignInTab());
+                    tabbedPane.add("Sign In",new SignInTab(this,cardLayout));
                     tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
                     tabbedPane.add("Sign Up",new SignUpTab());
                     tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
