@@ -16,7 +16,7 @@ public class Window {
                 JFrame window = new JFrame();
                        window.setLayout(null);
                        window.setSize(new Dimension(1000,800));
-                       //window.add();
+                       window.add(new CentralPanel(window));
                        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                        window.setVisible(true);
             }

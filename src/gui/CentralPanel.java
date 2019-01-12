@@ -1,5 +1,6 @@
 package gui;
 
+import com.sun.glass.events.KeyEvent;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -29,13 +30,14 @@ public class CentralPanel extends JPanel {
     private void createComponents() {
         // creating cards
         JTabbedPane tabbedPane = new JTabbedPane();
-                    //tabbedPane.add(new SignInTab(cardLayout))
-                    //tabbedPane.add(new SignUpTab(cardLayout))
-        //HomepagePane home = new HomepagePane(window);
-        
+                    tabbedPane.add("Sign In",new SignInTab());
+                    tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
+                    tabbedPane.add("Sign Up",new SignUpTab());
+                    tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+        Homepage homepage = new Homepage();
         // attaching cards 
-        
-        
+        add(tabbedPane,"tabbedPane");
+        add(homepage,"homepage");
     }
     public void paintComponent(Graphics g) {
         g.setColor(Color.WHITE);
