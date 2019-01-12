@@ -17,7 +17,6 @@ public class SignInTab extends JPanel {
         setLayout(null);
         JButton button = new JButton("HOME");
                 button.setBounds(300, 300, 100, 50);
-                
         add(button);
     }
     
