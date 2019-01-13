@@ -10,7 +10,7 @@ import laundrytimesheet.Person;
  * 1 --> add(Person)
  * 2 --> doesUserExist(Person)
  * 3 --> removeUser(Person)  
- * @author LaundryApp
+ * @author Sheldon
  */
 public class DatabaseManager {
 	/**
