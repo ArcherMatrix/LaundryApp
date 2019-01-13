@@ -31,6 +31,9 @@ public class Person {
 		public String getUsername(){
 			return username;
 		}
+                public void setPassword(String password) {
+                    this.password = password.toCharArray();
+                }
 		public void setPassword(char[] password) {
 			this.password = password;
 		}
