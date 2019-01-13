@@ -19,36 +19,46 @@ import listeners.SignInListener;
  * @author Moises
  */
 public class SignInTab extends JPanel {
-    JPanel centralPanel;
-    CardLayout cardLayout;
+    private JLabel titleLabel;
+    private JLabel usernameLabel;
+    private JTextField usernameField;
+    private JLabel passwordLabel;
+    private JPasswordField passwordField;
+    private JButton buttonSignIn;
     
     SignInTab(JPanel centralPanel, CardLayout cardLayout) {
-        this.centralPanel = centralPanel;
-        this.cardLayout = cardLayout;
         setLayout(null);
+        
+        titleLabel = new JLabel("The Knight Wash");
+        titleLabel.setBounds(42,172, 956,108);
+        titleLabel.setFont(new Font("Cooper Black",Font.PLAIN,100));
+ 
+        usernameLabel = new JLabel("Username:");
+        usernameLabel.setBounds(200,415,163,40);
+        usernameLabel.setFont(new Font("Bauhaus 93", Font.BOLD,30));
+        
+        passwordLabel = new JLabel("Password:");
+        passwordLabel.setBounds(200,530,163,40);
+        passwordLabel.setFont(new Font("Bauhaus 93",Font.PLAIN,30));
+
+        usernameField = new JTextField();
+        usernameField.setBounds(406,412,283,60);
+        usernameField.setFont(new Font("Lucida Console",Font.PLAIN,20));
+        
+        passwordField = new JPasswordField();
+        passwordField.setBounds(406,526,283,60);
+        passwordField.setFont(new Font("Lucida Console",Font.PLAIN,40));
+
+        buttonSignIn = new JButton("Sign In");
+        buttonSignIn.setFont(new Font(buttonSignIn.getFont().getFamily(),Font.BOLD,20));
+        buttonSignIn.setBounds(543,632,144,53);
+        buttonSignIn.addActionListener(new SignInListener(centralPanel,cardLayout));
+        
         createComponents();
     }
 
     private void createComponents() {
-        JLabel titleLabel = new JLabel("The Knigh Wash");
-               titleLabel.setBounds(42,172, 956,108);
-               titleLabel.setFont(new Font("Cooper Black",Font.PLAIN,100));
-        JLabel usernameLabel = new JLabel("Username:");
-               usernameLabel.setBounds(200,415,163,40);
-               usernameLabel.setFont(new Font("Bauhaus 93", Font.BOLD,30));
-        JLabel passwordLabel = new JLabel("Password:");
-               passwordLabel.setBounds(200,530,163,40);
-               passwordLabel.setFont(new Font("Bauhaus 93",Font.PLAIN,30));
-        JTextField usernameField = new JTextField();
-                   usernameField.setBounds(406,412,283,60);
-                   usernameField.setFont(new Font("Lucida Console",Font.PLAIN,20));
-        JPasswordField passwordField = new JPasswordField();
-                       passwordField.setBounds(406,526,283,60);
-                       passwordField.setFont(new Font("Lucida Console",Font.PLAIN,40));
-        JButton buttonSignIn = new JButton("Sign In");
-                buttonSignIn.setFont(new Font(buttonSignIn.getFont().getFamily(),Font.BOLD,20));
-                buttonSignIn.setBounds(543,632,144,53);
-                buttonSignIn.addActionListener(new SignInListener(centralPanel,cardLayout));
+        
         
         add(titleLabel);
         add(usernameLabel);
