@@ -18,6 +18,8 @@ public class DatabaseManager {
 	 * @param person object being added to the database
 	 * @return whether was able to create and save the Person on disk
 	 */
+	public DatabaseManager() {		
+	}
 	File file = new File(""); 
 	
 	//Adds a person to the database directory and then writes their info into a their personal file.
@@ -27,7 +29,7 @@ public class DatabaseManager {
 		output.println("Name: " + person.getName());
 		output.println("PhoneNumber: " + String.valueOf(person.getMobileNumber()));
 		output.println("Username " + person.getUsername());
-		output.println("Password: " + person.getPassword());
+		output.println("Password: " + String.valueOf(person.getPassword()));
 		output.close();
 	}
 	//Checks if the Persons's file exists and can be accessed.

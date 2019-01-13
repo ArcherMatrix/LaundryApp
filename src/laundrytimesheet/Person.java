@@ -5,7 +5,7 @@ public class Person {
 		private int mobileNumber;
 		private String emailAddress;
 		private String username;
-		private String password;
+		private char[] password;
 		
 		public void setName(String name) {
 			this.name = name;
@@ -31,10 +31,10 @@ public class Person {
 		public String getUsername(){
 			return username;
 		}
-		public void setPassword(String password) {
+		public void setPassword(char[] password) {
 			this.password = password;
 		}
-		public String getPassword() {
+		public char[] getPassword() {
 			return password;
 		}
 }
