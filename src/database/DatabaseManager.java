@@ -2,6 +2,7 @@ package database;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import laundrytimesheet.Person;
 /**
@@ -10,6 +11,7 @@ import laundrytimesheet.Person;
  * 1 --> add(Person)
  * 2 --> doesUserExist(Person)
  * 3 --> removeUser(Person)  
+ * 4 --> getRegisteredPerson();
  * @author Sheldon
  */
 public class DatabaseManager {
@@ -28,7 +30,6 @@ public class DatabaseManager {
 		PrintWriter output = new PrintWriter(file);
 		output.println("Name: " + person.getName());
 		output.println("PhoneNumber: " + String.valueOf(person.getMobileNumber()));
-		output.println("Username " + person.getUsername());
 		output.println("Password: " + String.valueOf(person.getPassword()));
 		output.close();
 	}
@@ -51,7 +52,34 @@ public class DatabaseManager {
 		else {
 			System.out.println("Error: User does not exist");
 		} 
-
-}
-	
+        }
+        /**
+         * This method is for retrieving information about a person
+         * @param person the person you wish to look for 
+         * @return returns a Person with the information saved in disk
+         */
+        public Person getRegisteredPerson(Person person) {
+            file = new File("src/database", person.getName()+".txt");
+            Person personRegistered = new Person();
+            try {
+                Scanner scanner = new Scanner(file);
+                while(scanner.hasNext()){
+                    switch(scanner.next()) {
+                        case "Name:":
+                            personRegistered.setName(scanner.next());
+                            break;
+                        case "PhoneNumber:":
+                            personRegistered.setMobileNumber(scanner.nextInt());
+                            break;
+                        case "Password:":
+                            personRegistered.setPassword(scanner.next());
+                            break;
+                    }
+                }
+            }catch(FileNotFoundException e) {e.printStackTrace();}
+//            System.out.println("name: " + personRegistered.getName());
+//            System.out.println("phone: " + personRegistered.getMobileNumber());
+//            System.out.println("password: " + personRegistered.getPassword());
+            return personRegistered;
+        }
 }

@@ -1,5 +1,7 @@
 package laundrytimesheet;
 
+import java.util.Arrays;
+
 public class Person {
 		private String name;
 		private int mobileNumber;
@@ -40,4 +42,15 @@ public class Person {
 		public char[] getPassword() {
 			return password;
 		}
+                
+                public boolean equals(Person person) {
+                    boolean equals = false;
+                    if(password.length != person.getPassword().length ){
+                        equals = false;
+                    }
+                    else {
+                        equals = Arrays.equals(password, person.getPassword());
+                    }
+                    return equals;
+                }
 }

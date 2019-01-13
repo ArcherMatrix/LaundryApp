@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import listeners.CreateAccountListener;
 import listeners.SignInListener;
 
 
@@ -52,14 +53,11 @@ public class SignInTab extends JPanel {
         buttonSignIn = new JButton("Sign In");
         buttonSignIn.setFont(new Font(buttonSignIn.getFont().getFamily(),Font.BOLD,20));
         buttonSignIn.setBounds(543,632,144,53);
-        buttonSignIn.addActionListener(new SignInListener(centralPanel,cardLayout));
-        
-        createComponents();
+        buttonSignIn.addActionListener(new SignInListener(centralPanel, cardLayout, usernameField, passwordField));
+        addComponents();
     }
 
-    private void createComponents() {
-        
-        
+    private void addComponents() {
         add(titleLabel);
         add(usernameLabel);
         add(passwordLabel);

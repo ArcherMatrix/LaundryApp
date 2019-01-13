@@ -28,6 +28,7 @@ public class CreateAccountListener implements ActionListener {
 
     
     public CreateAccountListener(JPanel centerPanel, CardLayout cardLayout,JTextField name, JTextField email,JTextField phone,JPasswordField password,JPasswordField confirmpassword) {
+        database = new DatabaseManager();
         this.centerPanel = centerPanel;
         this.cardLayout = cardLayout;
         this.name = name;
@@ -35,24 +36,26 @@ public class CreateAccountListener implements ActionListener {
         this.phone = phone; 
         this.password = password;
         this.confirmpassword = confirmpassword;
-     
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
     	if(password.equals(confirmpassword)) {
-        	
     		Person person = new Person();
     		person.setName(name.getText());
     		person.setEmailAddress(email.getText());
-    		person.setMobileNumber(Integer.valueOf(phone.getText()));
+                if(phone.getText().equals("")){
+                    person.setMobileNumber(0); 
+                }
+                else {
+                    person.setMobileNumber(Integer.valueOf(phone.getText()));
+                }
     		person.setPassword(password.getPassword());
     		try {
-				database.add(person);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
+                    database.add(person);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
     	}
     	else {
     		System.out.println("Error: Passwords are not the same!");

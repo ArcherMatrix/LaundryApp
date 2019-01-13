@@ -1,4 +1,0 @@
-name John
-email John@gmail.com
-phone: 1234567890
-password: MoisesIsTheBest
