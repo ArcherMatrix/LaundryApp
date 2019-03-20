@@ -10,4 +10,4 @@ gui -->  Contains classes that will display the pages to the user.
 database --> Stores all of the users's private information in indivdual files.
 
 
-resources --> This contains the images, sounds, (clasified information from ALIENS) and other medai that will be used in the gui.
+resources --> This contains the images, sounds, (classified information from ALIENS) and other media that will be used in the gui.
